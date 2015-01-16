@@ -52,7 +52,7 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
 \subsection{ユーザーへの情報の提供}
 ユーザーが選択した情報はサーバーによって取得されJSON形式でAndroid端末へと送られる。(図\ref{fig:JSON})Androidは受け取ったJSONをパースしAndroid Widgetとして表示する。(図\ref{fig:widget})
 
-サーバーへのリクエストはAndroid Widgetが行う自動更新、もしくはユーザーが任意のタイミングでAndroid Widgetをタップすることで行われる。
+サーバーへのリクエストはAndroid Widgetの自動更新の際、もしくはユーザーが任意のタイミングでAndroid Widgetをタップすることで行われる。
 
 \begin{figure}[htbp]
   \begin{minipage}{\hsize}
@@ -76,12 +76,12 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
     \caption{サーバーから送られるJSON}
     \label{fig:JSON}
   \end{minipage}
-\end{figure}
+%\end{figure}
 
-\begin{figure}[htbp]
+%\begin{figure}[htbp]
   \begin{minipage}{\hsize}
     \begin{center}
-      \fbox{\includegraphics[width=100mm]{image/widget_single.eps}}
+      \fbox{\includegraphics[width=80mm]{image/widget_single.eps}}
     \end{center}
     \caption{Android Widgetとして表示}
     \label{fig:widget}
