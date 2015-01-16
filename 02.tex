@@ -35,9 +35,57 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
 
 三つ目はセンシングデータである。自室などに設置した各種センサーからのデータに関してはセンシングする機器から直接Lindaに書き込み、それを利用するか、もしくはサーバーで受け取ったデータを受け取りサーバーがLindaに書き込むという手法で対応する。
 
+\subsection{ユーザーが受け取るデータの選択}
+
+ユーザーは受け取りたい情報をWebページ上から指定する。Lindaサーバーに存在するデータの中からTupleNameとTupleTypeを指定する。(図\ref{fig:select})
+
+\begin{figure}[htbp]
+  \begin{minipage}{\hsize}
+    \begin{center}
+      \fbox{\includegraphics[width=100mm]{image/select.eps}}
+    \end{center}
+    \caption{Androidクライアントに送信するデータの選択}
+    \label{fig:select}
+  \end{minipage}
+\end{figure}
+
 \subsection{ユーザーへの情報の提供}
-ユーザーが選択した情報はサーバーによって取得されJSON形式でAndroid端末へと送られる。Androidは受け取ったJSONをパースしAndroid Widgetとして表示する。
+ユーザーが選択した情報はサーバーによって取得されJSON形式でAndroid端末へと送られる。(図\ref{fig:JSON})Androidは受け取ったJSONをパースしAndroid Widgetとして表示する。(図\ref{fig:widget})
 
 サーバーへのリクエストはAndroid Widgetが行う自動更新、もしくはユーザーが任意のタイミングでAndroid Widgetをタップすることで行われる。
+
+\begin{figure}[htbp]
+  \begin{minipage}{\hsize}
+    \begin{center}
+      \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
+
+      {
+          "info": [
+              {
+                  "0": "2015年01月16日14時43分現在",
+                  "1": "小田急線は平常どおり運転しております。",
+                  "2": "We are out of inventory. Please check back soon.",
+                  "3": "Fujisawa-shi",
+                  "4": "Mostly Cloudy"
+              }
+          ]
+      }
+
+      \end{lstlisting}
+    \end{center}
+    \caption{サーバーから送られるJSON}
+    \label{fig:JSON}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{minipage}{\hsize}
+    \begin{center}
+      \fbox{\includegraphics[width=100mm]{image/widget_single.eps}}
+    \end{center}
+    \caption{Android Widgetとして表示}
+    \label{fig:widget}
+  \end{minipage}
+\end{figure}
 
 \nocite{*}
