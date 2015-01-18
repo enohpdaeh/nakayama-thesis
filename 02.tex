@@ -14,7 +14,7 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
 \begin{table}[htbp]
   \caption{システム構成}
   \label{tb:files}
-  \begin{center}\begin{tabular}{c|p{11cm}}
+  \begin{center}\begin{tabular}{|c|p{12cm}|}
     \hline
     システム&概要\\\hline\hline
     {\tt Linda}&データ元。データストリームからデータを取得する。\\\hline
@@ -26,17 +26,17 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
 \end{table}
 
 \subsection{データの取得と記録}
-データの取得方法としては大きく分けて三つ存在する。
+データの取得元は三つ存在する。
 
-まず一つ目として既存のAPIを用いて取得する方法である。天気予報や株価の情報など比較的ポピュラーな情報であれば既にAPIが存在するので、それらを用いて定期的にサーバーがデータを取得しLindaへと書きこむ。
+まず一つ目として既存のAPIを用いて取得する方法である。天気予報や株価の情報など比較的ポピュラーな情報であれば既にAPIが存在するので、それらを用いて定期的にサーバーがデータを取得しLindaへ書き込む。
 
-二つ目はAPIが存在しないWebページ上の情報である。例として自分の利用する公共交通機関の運行情報や特定の商品の在庫情報などである。これらのデータはKimono\footnote{https://www.kimonolabs.com/\\指定したWebページをスクレイピングし、API化するサービス。}を用いて取得したい部分のAPIを作成しデータを取得する。
+二つ目はAPIが存在しないWebページ上の情報である。例として自分の利用する公共交通機関の運行情報や特定の商品の在庫情報などである。これらのデータはKimono\footnote{https://www.kimonolabs.com/\\指定したWebページをスクレイピングし、API化するサービス。}を用いて取得したい部分に対応するAPIを作成しデータを取得する。
 
 三つ目はセンシングデータである。自室などに設置した各種センサーからのデータに関してはセンシングする機器から直接Lindaに書き込むか、もしくはセンシングする機器からサーバー経由でLindaに書き込む。
 
 \subsection{ユーザーが受け取るデータの選択}
 
-ユーザーは受け取りたい情報をWebページ上から指定する。Lindaサーバーに存在するデータの中からTupleNameとTupleTypeを指定する。(図\ref{fig:select})
+ユーザーは受け取りたい情報をWebページ上から指定する。Lindaサーバーに存在するデータの中からTupleTypeとTupleNameを指定する。(図\ref{fig:select})
 
 \begin{figure}[htbp]
   \begin{minipage}{\hsize}
