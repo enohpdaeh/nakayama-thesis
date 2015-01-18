@@ -5,7 +5,7 @@
 
 \section{システム概要}
 
-本システムの目的はあらゆる情報を容易に取得することだ。
+本システムの目的は複数の情報をユーザーに提供することだ。
 サーバーは各種APIなどを用いてユーザーが必要とする情報を取得しLinda\footnote{http://linda.masuilab.org\\データをクラウド上で共有するためのフレームワーク。並列処理で同時に多くのクライアントを処理できる。}へと書き込み、Androidクライアントからのリクエストに応じてLindaからデータを取得しJSON形式でレスポンスを返す。
 Androidクライアントはユーザーの操作に応じてサーバーにリクエストを送り、サーバーから返されたJSONをパースして表示する。
 
@@ -14,13 +14,12 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
 \begin{table}[htbp]
   \caption{システム構成}
   \label{tb:files}
-  \begin{center}\begin{tabular}{c|l}
+  \begin{center}\begin{tabular}{c|p{11cm}}
     \hline
     システム&概要\\\hline\hline
     {\tt Linda}&データ元。データストリームからデータを取得する。\\\hline
-    {\tt サーバー}&Lindaからデータを取得し、クライアントからのリクエストが来たら送信する。\\
-                      &Lindaにデータを書き込む。\\\hline
-    {\tt WEBクライアント}&取得する情報を選択する為のビューを提供する。\\\hline
+    {\tt サーバー}&Androidクライアントからのリクエストがに応じLindaからデータを取得しAndroidクライアントに送信する。外部から取得したデータをLindaに書き込む。\\\hline
+    {\tt WEBクライアント}&Androidクライアントに送信する情報を選択する為のビューを提供する。\\\hline
     {\tt Androidクライアント}&サーバーにデータを要求し、ユーザーに情報を表示する。\\\hline
     {\tt データベース}&サーバーのデータを保存している。\\\hline
   \end{tabular}\end{center}
