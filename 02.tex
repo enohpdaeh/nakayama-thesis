@@ -5,7 +5,7 @@
 
 \section{システム概要}
 
-本システムの目的は複数の情報をユーザーに提供することだ。
+本システムの目的はユーザーが必要とする複数の情報を提供することで、ユーザーが効率良く価値の高い情報を得られるようにすることだ。
 サーバーは各種APIなどを用いてユーザーが必要とする情報を取得しLinda\footnote{http://linda.masuilab.org\\データをクラウド上で共有するためのフレームワーク。並列処理で同時に多くのクライアントを処理できる。}へと書き込み、Androidクライアントからのリクエストに応じてLindaからデータを取得しJSON形式でレスポンスを返す。
 Androidクライアントはユーザーの操作に応じてサーバーにリクエストを送り、サーバーから返されたJSONをパースして表示する。
 
@@ -43,7 +43,7 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
     \begin{center}
       \fbox{\includegraphics[width=100mm]{image/select.eps}}
     \end{center}
-    \caption{Androidクライアントに送信するデータの選択}
+    \caption{Androidクライアントに送信するデータの選択画面}
     \label{fig:select}
   \end{minipage}
 \end{figure}
@@ -72,7 +72,7 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
 
       \end{lstlisting}
     \end{center}
-    \caption{サーバーから送られるJSON}
+    \caption{サーバーから送られるJSONの例}
     \label{fig:JSON}
   \end{minipage}
 %\end{figure}
@@ -82,7 +82,7 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
     \begin{center}
       \fbox{\includegraphics[width=80mm]{image/widget_single.eps}}
     \end{center}
-    \caption{Android Widgetとして表示}
+    \caption{Android Widgetとして表示する例}
     \label{fig:widget}
   \end{minipage}
 \end{figure}
