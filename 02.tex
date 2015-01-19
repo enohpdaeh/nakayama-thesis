@@ -29,11 +29,7 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
 \subsection{データの取得と記録}
 データの取得方法は三つ存在する。
 
-まず一つ目として既存のAPIを用いて取得する方法である。天気予報や株価の情報など比較的ポピュラーな情報であれば既にAPIが存在するので、それらを用いて定期的にサーバーがデータを取得しLindaへ書き込む。(図\ref{fig:weather_widget})の例ではYQL\footnote{Yahoo query language}を用いて取得した天気予報をAndroid Widgetとして表示している。
-
-二つ目はAPIが存在しないWebページ上の情報である。例として自分の利用する公共交通機関の運行情報や特定の商品の在庫情報などである。これらのデータはKimono\footnote{https://www.kimonolabs.com/\\指定したWebページをスクレイピングし、API化するサービス。}を用いて取得したい部分に対応するAPIを作成しデータを取得する。(図\ref{fig:odakyu_widget})の例では小田急電鉄のWebページ\footnote{http://www.odakyu.jp/cgi-bin/user/emg/emergency\_bbs.pl}(図\ref{fig:odakyu_page})にて公開されている列車の運行情報をKimonoを用いてAPI化して取得し、Android Widgetとして表示している。
-
-三つ目はセンシングデータである。自室などに設置した各種センサーからのデータに関してはセンシングする機器から直接Lindaに書き込むか、もしくはセンシングする機器からサーバー経由でLindaに書き込む。(図\ref{fig:sensor_widget})の例ではArduinoと明るさセンサー、温度センサーを用いてLindaにそれぞれの値を書き込こむ為の機構である。
+まず一つ目として既存のAPIを用いて取得する方法である。天気予報や株価の情報など比較的ポピュラーな情報であれば既にAPIが存在するので、それらを用いて定期的にサーバーがデータを取得しLindaへ書き込む。(図\ref{fig:weather_widget})の例ではYQL\footnote{https://developer.yahoo.com/yql/}を用いて取得した天気予報をAndroid Widgetとして表示している。
 
 \begin{figure}[htbp]
   \begin{minipage}{\hsize}
@@ -44,6 +40,8 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
     \label{fig:weather_widget}
   \end{minipage}
 \end{figure}
+
+二つ目はAPIが存在しないWebページ上の情報である。例として自分の利用する公共交通機関の運行情報や特定の商品の在庫情報などである。これらのデータはKimono\footnote{https://www.kimonolabs.com/\\指定したWebページをスクレイピングし、API化するサービス。}を用いて取得したい部分に対応するAPIを作成しデータを取得する。(図\ref{fig:odakyu_widget})の例では小田急電鉄のWebページ\footnote{http://www.odakyu.jp/cgi-bin/user/emg/emergency\_bbs.pl}(図\ref{fig:odakyu_page})にて公開されている列車の運行情報をKimonoを用いてAPI化して取得し、Android Widgetとして表示している。
 
 \begin{figure}[htbp]
   \begin{minipage}{\hsize}
@@ -64,6 +62,8 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
     \label{fig:odakyu_page}
   \end{minipage}
 \end{figure}
+
+三つ目はセンシングデータである。自室などに設置した各種センサーからのデータに関してはセンシングする機器から直接Lindaに書き込むか、もしくはセンシングする機器からサーバー経由でLindaに書き込む。(図\ref{fig:sensor_widget})の例ではArduinoと明るさセンサー、温度センサーを用いてLindaにそれぞれの値を書き込こむ為の機構である。
 
 \begin{figure}[htbp]
   \begin{minipage}{\hsize}
