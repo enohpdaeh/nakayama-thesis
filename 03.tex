@@ -4,12 +4,12 @@
 この章では本研究でのプロトタイプを実装し、その流れを解説する。
 
 \section{サーバーサイド}
-実装に際してサーバーサイドはNode.js\footnote{https://nodejs.org/}を用いて実装した。またデータベースにはmongoDB\footnote{http://www.mongodb.org/}を採用している。
-
+実装に際してLindaとのデータのやり取りが多いためサーバーサイドはNode.js\footnote{https://nodejs.org/}を用いて実装した。またデータベースにはmongoDB\footnote{http://www.mongodb.org/}を採用している。ユーザーに提供するデータの格納先としてLindaを利用し、データの取得及び書き込みを行なっている。
 言語はJavascriptを使い、Node.jsのsocket.io\footnote{http://socket.io/}で実装した。
 mongoDBにはユーザーが指定したTupleTypeとTupleNameのペアを保存している。
-
 Lindaサーバーに対してsocket.ioを用いて常にコネクションを貼り、Androidクライアントからのリクエストに応じて、mongoDBに保存されているTupleTypeとTupleNameのペアを元にデータを取得している。
+
+各種APIへのリクエストとそれによって取得したデータのLindaへの書き込みを5秒ごとに実行しLinda上の情報を最新の状態に保っている。
 
 \section{Androidクライアントサイド}
 \subsection{データの取得}
@@ -18,4 +18,6 @@ Lindaサーバーに対してsocket.ioを用いて常にコネクションを貼
 またAndroid Widgetの自動更新は最短でも15分間隔のため、取得したいデータの種類によってはもっと新しい情報が欲しいという状況が想定される。そのため表示内容の手動更新機能をつけた。表示内容を手動更新する操作にはAndroid Widgetのタップを採用することで、情報を表示するスペースを圧迫することを回避した。
 
 \subsection{データの表示}
-データの表示に関してサーバーから受け取ったJSONは一要素ずつAndroid Widget上のtextviewに挿入され表示される。
+サーバーから受け取ったJSONは一要素ずつAndroid Widget上のtextviewに挿入されテキストとして表示される。
+表示する要素の行数に応じて、Android Widgetのサイズを変更可能にすることで必要以上に画面スペースを占有してしまう事を防いでいる。
+

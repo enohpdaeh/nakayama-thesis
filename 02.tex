@@ -36,7 +36,7 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
 
 \subsection{ユーザーが受け取るデータの選択}
 
-ユーザーは受け取りたい情報をWebページ上から指定する。Lindaサーバーに存在するデータの中からTupleTypeとTupleNameを指定する。(図\ref{fig:select})
+ユーザーは受け取りたい情報をWebページ上から指定する。Lindaサーバーに存在するデータの中から受け取りたい情報に対応したTupleTypeとTupleNameのペアを指定する。(図\ref{fig:select})このペアはデータベースに保存され、JSONを生成する際に参照される。
 
 \begin{figure}[htbp]
   \begin{minipage}{\hsize}
@@ -51,7 +51,7 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
 \subsection{ユーザーへの情報の提供}
 ユーザーが選択した情報はサーバーによって取得されJSON形式でAndroid端末へと送られる。(図\ref{fig:JSON})Androidは受け取ったJSONをパースしAndroid Widgetとして表示する。(図\ref{fig:widget})
 
-サーバーへのリクエストはAndroid Widgetの自動更新の際と、ユーザーがAndroid Widgetをタップした際に実行される。
+サーバーへのリクエストは15分間隔のAndroid Widgetの自動更新の際と、ユーザーがAndroid Widgetをタップした際に実行される。
 
 \begin{figure}[htbp]
   \begin{minipage}{\hsize}
