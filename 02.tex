@@ -63,17 +63,7 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
   \end{minipage}
 \end{figure}
 
-三つ目はセンシングデータである。自室などに設置した各種センサーからのデータに関してはセンシングする機器から直接Lindaに書き込むか、もしくはセンシングする機器からサーバー経由でLindaに書き込む。(図\ref{fig:sensor_widget})の例ではArduinoと明るさセンサー、温度センサーを用いてLindaにそれぞれの値を書き込こむ為の機構である。
-
-\begin{figure}[htbp]
-  \begin{minipage}{\hsize}
-    \begin{center}
-      \fbox{\includegraphics[width=100mm]{image/sensor_widget.eps}}
-    \end{center}
-    \caption{センサーデータをWidgetとして表示}
-    \label{fig:sensor_widget}
-  \end{minipage}
-\end{figure}
+三つ目はセンシングデータである。自室などに設置した各種センサーからのデータに関してはセンシングする機器から直接Lindaに書き込むか、もしくはセンシングする機器からサーバー経由でLindaに書き込む。(図\ref{fig:arduino_sensor})はArduinoと明るさセンサー、温度センサーを用いてLindaにそれぞれの値を書き込こむ為の機構である。(図\ref{fig:sensor_widget})ではこの機構を用いて取得したデータを表示している。
 
 \begin{figure}[htbp]
   \begin{minipage}{\hsize}
@@ -82,6 +72,16 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
     \end{center}
     \caption{明るさと温度を取得するセンサーとArduino}
     \label{fig:arduino_sensor}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{minipage}{\hsize}
+    \begin{center}
+      \fbox{\includegraphics[width=100mm]{image/sensor_widget.eps}}
+    \end{center}
+    \caption{センサーデータをWidgetとして表示}
+    \label{fig:sensor_widget}
   \end{minipage}
 \end{figure}
 
@@ -126,9 +126,9 @@ Androidクライアントはユーザーの操作に応じてサーバーにリ�
     \caption{サーバーから送られるJSONの例}
     \label{fig:JSON}
   \end{minipage}
-%\end{figure}
+\end{figure}
 
-%\begin{figure}[htbp]
+\begin{figure}[htbp]
   \begin{minipage}{\hsize}
     \begin{center}
       \fbox{\includegraphics[width=100mm]{image/widget_single.eps}}
